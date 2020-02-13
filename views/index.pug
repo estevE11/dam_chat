@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title DAM Chat
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js')
+        link(rel="stylesheet", href="css/style.css" type="text/css")
+        script(src="js/main.js")
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+    body
+        ul#chatbox
+
+        input#inp_chat(type="text" placeholder="Write your message here")
+        button#btn_send(onclick="send()") Send
+        br
+        input#inp_username(type="text" placeholder="Username")
