@@ -48,5 +48,5 @@ function server_connect(ip, port) {
 }
 
 window.onload = function() {
-    server_connect("localhost", "3000");
+    server_connect(window.prompt("IP:", "??.???.???.???"), "3000");
 };
