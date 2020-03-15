@@ -79,7 +79,7 @@ function server_connect(ip, port) {
 }
 
 window.onload = function() {
-    const ip = window.prompt("IP:", "??.???.???.???");
+    const ip = "localhost";
     username = window.prompt("Username:", "");
     server_connect(ip, "3000");
 };
