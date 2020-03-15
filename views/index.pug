@@ -11,9 +11,8 @@ html(lang="en")
         script(src="js/main.js")
         script(src="https://code.jquery.com/jquery-3.4.1.min.js")
     body
-        ul#chatbox
+        .scroll
+            ul#chatbox
 
         input#inp_chat(type="text" placeholder="Write your message here")
         button#btn_send(onclick="send()") Send
-        br
-        input#inp_username(type="text" placeholder="Username")
