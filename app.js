@@ -4,9 +4,11 @@ const app = express();
 const path = require("path");
 const url = require("url");
 
-const PORT = 80;
+const PORT = 8080;
 
-const server = app.listen(3000);
+const server = app.listen(3000, function() {
+    console.log("Listening to 3000 for the server");
+});
 const io = socketio(server);
 
 let message_history = [];
