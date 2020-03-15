@@ -4,11 +4,9 @@ const app = express();
 const path = require("path");
 const url = require("url");
 
-const PORT = 8080;
-
+const PORT = 80;
 
 const server = app.listen(3000);
-
 const io = socketio(server);
 
 let message_history = [];
@@ -31,6 +29,7 @@ app.get("/", function(req, res) {
 });
 
 io.on("connection", function(socket) {
+    console.log("caca");
     io.to(socket.id).emit('msgh', message_history);
 
     socket.on("send_msg", function(data) {
