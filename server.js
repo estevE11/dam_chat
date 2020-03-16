@@ -11,7 +11,12 @@ const io = socketio(server);
 let message_history = [];
 let colors = [];
 
+app.get("/", (req, res) => {
+    console.log(req.url);
+});
+
 io.on("connection", function(socket) {
+    console.log("Connection");
     io.to(socket.id).emit('msgh', message_history);
 
     socket.on("send_msg", function(data) {
