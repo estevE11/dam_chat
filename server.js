@@ -2,7 +2,9 @@ const express = require("express");
 const socketio = require("socket.io");
 const app = express();
 
-const server = app.listen(3000);
+const server = app.listen(3000, function() {
+    console.log("listening to 3000");
+});
 
 const io = socketio(server);
 
