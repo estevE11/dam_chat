@@ -6,9 +6,10 @@ const url = require("url");
 
 const PORT = 80;
 
-const server = app.listen(3000, function() {
-    console.log("Listening to 3000 for the server");
+const server = app.listen(PORT, function() {
+    console.log("Listening to " + PORT);
 });
+
 const io = socketio(server);
 
 let message_history = [];
@@ -19,10 +20,6 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "static")));
-
-app.listen(PORT, function() {
-    console.log("Listening to " + PORT);
-});
 
 app.get("/", function(req, res) {
     console.log(req.url);

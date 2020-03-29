@@ -10,7 +10,11 @@ div.scroll {
     overflow-x: hidden; 
     overflow-x: auto; 
     text-align:justify; 
-} 
+}
+
+#inp_chat {
+    height: 40px;
+}
 
 #chatbox {
     list-style: none;
