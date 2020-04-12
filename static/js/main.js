@@ -56,6 +56,7 @@ function addMessage(msg) {
 function server_connect(ip, port) {
     const full_ip = ip + ":" + port;
     socket = io(full_ip, {transports:['websocket']});
+    console.log("Trying to connect to " + full_ip);
     socket.on("connect", function() {
         console.log("Connected to  " + full_ip);
         con_id = socket.id;
