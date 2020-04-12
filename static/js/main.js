@@ -81,5 +81,5 @@ function server_connect(ip, port) {
 window.onload = function() {
     const ip = window.prompt("IP:", "IP Adress");
     username = window.prompt("Username:", "");
-    server_connect(ip, "80");
+    server_connect(ip, "8080");
 };
