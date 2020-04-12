@@ -28,6 +28,7 @@ app.get("/", function(req, res) {
 });
 
 io.on("connection", function(socket) {
+    io.set('transports', ['websocket']);
     console.log("caca");
     io.to(socket.id).emit('msgh', message_history);
 
