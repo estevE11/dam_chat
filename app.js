@@ -1,5 +1,5 @@
 const express = require("express");
-//const socketio = require("socket.io");
+const socketio = require("socket.io");
 const app = express();
 const path = require("path");
 const url = require("url");
@@ -10,7 +10,7 @@ const server = app.listen(PORT, function() {
     console.log("Listening to " + PORT);
 });
 
-//const io = socketio(server);
+const io = socketio(server);
 
 let message_history = [];
 let colors = [];
@@ -27,14 +27,8 @@ app.get("/", function(req, res) {
     res.render(p.substring(1, p.length), url.parse(req.url, true));
 });
 
-app.get("/caca", (req, res) => {
-    res.send("caca");
-});
-
-/*
 io.on("connection", function(socket) {
     io.set('transports', ['websocket']);
-    console.log("caca");
     io.to(socket.id).emit('msgh', message_history);
 
     socket.on("send_msg", function(data) {
@@ -46,7 +40,7 @@ io.on("connection", function(socket) {
         socket.broadcast.emit("receive_msg", data);
         io.to(socket.id).emit("msg_sent", data);
     });
-});*/
+});
 
 const get_random_color = () => {
     const max = 200, min = 50;
