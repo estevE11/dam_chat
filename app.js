@@ -24,7 +24,8 @@ app.use(express.static(path.join(__dirname, "static")));
 app.get("/", function(req, res) {
     console.log(req.url);
     let p = path.join(req.url, "index");
-    res.render(p.substring(1, p.length), url.parse(req.url, true));
+    //res.render(p.substring(1, p.length), url.parse(req.url, true));
+    res.send("caca");
 });
 
 io.on("connection", function(socket) {
