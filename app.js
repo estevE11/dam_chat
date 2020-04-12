@@ -12,11 +12,6 @@ const server = app.listen(PORT, function() {
 
 const io = socketio(server);
 
-io.configure(function () {
-    io.set('transports', ['xhr-polling']);
-    io.set('transports', ['websocket','xhr-polling']);
-});
-
 let message_history = [];
 let colors = [];
 
