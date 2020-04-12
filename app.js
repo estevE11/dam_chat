@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 const url = require("url");
 
-const PORT = 80;
+const PORT = 8080;
 
 const server = app.listen(PORT, function() {
     console.log("Listening to " + PORT);
@@ -26,6 +26,11 @@ app.get("/", function(req, res) {
     let p = path.join(req.url, "index");
     res.render(p.substring(1, p.length), url.parse(req.url, true));
 });
+
+app.get("/caca", (req, res) => {
+    res.send("caca");
+});
+
 /*
 io.on("connection", function(socket) {
     io.set('transports', ['websocket']);
